@@ -31,6 +31,11 @@ resource "azurerm_mysql_server" "tf-mysqlserver-miguel" {
   public_network_access_enabled     = true
   ssl_enforcement_enabled           = true
   ssl_minimal_tls_version_enforced  = "TLS1_2"
+
+  tags = {
+    Description = "MySQL server created with Terraform"
+    Environment = "Test"
+  }
 }
 
 # Allow access to Azure services
